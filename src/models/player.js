@@ -1,5 +1,4 @@
-class Player {
-
+export class Player {
   constructor(initialStamina, maxStamina, availableTurns) {
     this.stamina = initialStamina;
     this.maxStamina = maxStamina;
@@ -9,7 +8,7 @@ class Player {
   increaseStamina(staminaToAdd) {
     if (this.stamina === this.maxStamina) {
       return;
-    } else if ((this.stamina + staminaToAdd) > this.maxStamina) {
+    } else if (this.stamina + staminaToAdd > this.maxStamina) {
       this.stamina = this.maxStamina;
     } else {
       this.stamina += staminaToAdd;
@@ -19,7 +18,7 @@ class Player {
   decreaseStamina(staminaToRemove) {
     if (this.stamina === 0) {
       return;
-    } else if ((this.stamina - staminaToRemove) < 0) {
+    } else if (this.stamina - staminaToRemove < 0) {
       this.stamina = 0;
     } else {
       this.stamina -= staminaToRemove;
@@ -33,5 +32,3 @@ class Player {
     }
   }
 }
-
-module.exports = Player;
